@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCore Arena</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to EcoCore Arena</h1>
+        <p>Your ultimate destination for eco-friendly events.</p>
+    </header>
+    <main>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>
+                    <h3>Eco Festival 2026</h3>
+                    <p>Date: March 25, 2026</p>
+                    <button onclick="bookEvent('Eco Festival 2026')">Book Now</button>
+                </li>
+                <li>
+                    <h3>Green Concert</h3>
+                    <p>Date: April 10, 2026</p>
+                    <button onclick="bookEvent('Green Concert')">Book Now</button>
+                </li>
+            </ul>
+        </section>
+        <section id="booking">
+            <h2>Book Your Seat</h2>
+            <form id="bookingForm">
+                <label for="event">Select Event:</label>
+                <select id="event" name="event" required>
+                    <option value="Eco Festival 2026">Eco Festival 2026</option>
+                    <option value="Green Concert">Green Concert</option>
+                </select>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 EcoCore Arena. All rights reserved.</p>
+    </footer>
+    <script>
+        function bookEvent(eventName) {
+            alert('You have selected to book: ' + eventName);
+        }
+
+        document.getElementById('bookingForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Booking submitted for ' + document.getElementById('event').value + ' by ' + document.getElementById('name').value);
+        };
+    </script>
+</body>
+</html>
